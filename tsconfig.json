@@ -98,6 +98,18 @@
 
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
-    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+    "skipLibCheck": true,
+    "plugins": [
+      {"trnasform": "typescript-transfrom-paths"},
+      {"trnasform": "typescript-transfrom-paths", "afterDeclarations": true}
+
+    ],
+    "paths": {
+      "@global/*": ["src/shared/globals/*"],
+      "@service/*": ["src/shared/services/*"],
+      "@auth/*": ["src/features/auth/*"],
+      "@root/*": ["src/*"]
+
+    }                              /* Skip type checking all .d.ts files. */
   }
 }
