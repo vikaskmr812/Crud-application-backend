@@ -9,11 +9,11 @@ import compression from 'compression'
 import HTTP_STATUS from 'http-status-codes'
 
 
-import { config } from './config';
-import applicationRoutes from './route';
-import {CustomError, ErrorResponse} from './shared/globals/helpers/error-handler'
+import { config } from '@root/config';
+import applicationRoutes from '@root/route';
+import {CustomError, ErrorResponse} from '@global/helpers/error-handler'
 
-const PORT = 5000;
+const PORT = 5500;
 
 const log: Logger = config.createLogger('server');
 

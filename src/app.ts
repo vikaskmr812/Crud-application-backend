@@ -1,6 +1,6 @@
 import express, {Express} from 'express';
 
-import {Server} from "./server";
+import {Server} from "@root/server";
 
 class Application {
     public initialize(): void {
