@@ -1,5 +1,5 @@
 import { Document } from "mongoose";
-import {ObjectId} from 'mongodb'
+// import {ObjectId} from 'mongodb'
 declare global {
     namespace Express {
         interface Request {
@@ -16,20 +16,25 @@ export interface AuthPayload {
 }
 
 export  interface AuthDocument extends Document {
-    _id: string | ObjectId;
+    // _id: string | ObjectId;
     name: string;
     email: string;
     mobile: number;
     createdAt: Date;
-    password: string;
+    password: string;
     comparePassword(password : string): Promise<boolean>;
     hashPassword(password: string): Promise<string>;
 }
 
 export interface ISignupData {
-    _id: ObjectId;
+
     email: string;
+    mobile: number;
     name: string;
     password: string
 
+}
+
+export interface AuthJob {
+    value?: string | AuthDocument; /* UserDocument */
 }
