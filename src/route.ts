@@ -1,12 +1,11 @@
-import { Application} from "express";
-// const BASE PATH = "/api/v1"
+import { Application } from 'express';
+
+import { authRoutes } from '@auth/routes/authroute';
+
 
 export default (app: Application) => {
-    const routes = () => {
-        app.get('/', (_req, res) => {
-            res.send("Hi Vikas!")
-        })
-
-    }
-    routes();
-}
+  const routes = () => {
+    app.use(authRoutes.routes());
+  };
+  routes();
+};
