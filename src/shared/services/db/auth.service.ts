@@ -15,6 +15,14 @@ class AuthService {
         const user: AuthDocument = (await AuthModel.findOne(query).exec()) as AuthDocument;
         return user;
     } 
+    public async getUserByEmail(email: string): Promise<AuthDocument> {
+        const user: AuthDocument = (await AuthModel.findOne({
+            email: Helpers.lowerCase(email)
+        }).exec()
+        ) as AuthDocument;
+        return user;
+    }
 }
 
 export const authService: AuthService = new AuthService();
+
