@@ -17,12 +17,12 @@ const signupSchema: ObjectSchema = Joi.object().keys({
         // 'number.equal': 'Invalid mobile no.',
         'number.empty': ' mobile is a required field',
     }),
-    password:Joi.string().required().min(4).max(15).messages({
-        'string.base': 'password must be string',
-        'string.min': 'Invalid Password',
-        'string.max': 'Invalid Password',
-        'string.empty': 'Password is a required field'
+    // password:Joi.string().required().min(4).max(15).messages({
+    //     'string.base': 'password must be string',
+    //     'string.min': 'Invalid Password',
+    //     'string.max': 'Invalid Password',
+    //     'string.empty': 'Password is a required field'
 
-    })
+    // })
 })
 export { signupSchema };
