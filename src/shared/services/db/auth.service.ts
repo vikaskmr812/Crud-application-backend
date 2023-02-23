@@ -8,13 +8,6 @@ class AuthService {
         await AuthModel.create(data)
     };
 
-    public async getUserByNameOrEmail(name: string, email: string): Promise<AuthDocument> {
-        const query = {
-            $or: [{ name: Helpers.firstLetterUppercase(name)}, {email: Helpers.lowerCase(email) }]
-        };
-        const user: AuthDocument = (await AuthModel.findOne(query).exec()) as AuthDocument;
-        return user;
-    } 
     public async getUserByEmail(email: string): Promise<AuthDocument> {
         const user: AuthDocument = (await AuthModel.findOne({
             email: Helpers.lowerCase(email)
