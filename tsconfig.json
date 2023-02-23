@@ -108,6 +108,7 @@
       "@global/*": ["src/shared/globals/*"],
       "@service/*": ["src/shared/services/*"],
       "@auth/*": ["src/features/auth/*"],
+      "@user/*": ["src/features/users/*"],
       "@root/*": ["src/*"]
 
     }                              /* Skip type checking all .d.ts files. */

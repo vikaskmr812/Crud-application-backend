@@ -24,6 +24,7 @@ export  interface AuthDocument extends Document {
     password: string;
     comparePassword(password : string): Promise<boolean>;
     hashPassword(password: string): Promise<string>;
+    roles?: string[]
 }
 
 export interface ISignupData {

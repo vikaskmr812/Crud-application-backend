@@ -28,7 +28,8 @@ export class SignIn {
         const accessToken: string = jwt.sign(
             {
                 'UserInfo': {
-                    'name': existingUser.name
+                    'name': existingUser.name,
+                    'roles':existingUser.roles
                 }
             },
             config.ACCESS_TOKEN_SECRET!,
